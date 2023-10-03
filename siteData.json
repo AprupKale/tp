@@ -7,11 +7,11 @@
       "headings": {
         "about-us": "About Us",
         "project-team": "Project team",
-        "john-doe": "John Doe",
-        "jane-doe": "Jane Doe",
-        "johnny-doe": "Johnny Doe",
-        "jean-doe": "Jean Doe",
-        "james-doe": "James Doe"
+        "tham-you-wei": "Tham You Wei",
+        "zheng-yu": "Zheng Yu",
+        "timothy-putra-prasetio": "Timothy Putra Prasetio",
+        "aprup-kale": "Aprup Kale",
+        "zhi-sheng": "Zhi Sheng"
       },
       "headingKeywords": {}
     },
@@ -136,10 +136,41 @@
       "headingKeywords": {}
     },
     {
-      "src": "team/johndoe.md",
-      "title": "John Doe's Project Portfolio Page",
+      "src": "team/aprupkale.md",
+      "title": "Aprup Kale's Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-letsgethired": "Project: LetsGetHired"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/tim-pipi.md",
+      "headings": {
+        "project-letsgethired": "Project: LetsGetHired"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/tyouwei.md",
+      "title": "You Wei's Project Portfolio Page",
+      "headings": {
+        "project-letsgethired": "Project: LetsGetHired"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/zhengyup.md",
+      "title": "Zheng Yu's Project Portfolio Page",
+      "headings": {
+        "project-letsgethired": "Project: LetsGetHired"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/zsh_eng.md",
+      "title": "Zhi Sheng's Project Portfolio Page",
+      "headings": {
+        "project-letsgethired": "Project: LetsGetHired"
       },
       "headingKeywords": {}
     },
