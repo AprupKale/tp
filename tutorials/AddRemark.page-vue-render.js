@@ -131,7 +131,7 @@ with(this){return _c('p',[_v("If you are stuck, check out the sample\n"),_c('a',
 with(this){return _c('h2',{attrs:{"id":"add-remark-to-the-model"}},[_v("Add "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" to the model"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#add-remark-to-the-model","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Now that we have all the information that we need, let’s lay the groundwork for propagating the remarks added into the in-memory storage of internApplication data. We achieve that by working with the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Person")]),_v(" model. Each field in a Person is implemented as a separate class (e.g. a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Name")]),_v(" object represents the internApplication’s name). That means we should add a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" class so that we can use a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" object to represent a remark given to a internApplication.")])}
+with(this){return _c('p',[_v("Now that we have all the information that we need, let’s lay the groundwork for propagating the remarks added into the in-memory storage of internApplication data. We achieve that by working with the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Person")]),_v(" model. Each field in a Person is implemented as a separate class (e.g. a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Company")]),_v(" object represents the internApplication’s company). That means we should add a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" class so that we can use a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" object to represent a remark given to a internApplication.")])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"add-a-new-remark-class"}},[_v("Add a new "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" class"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#add-a-new-remark-class","onclick":"event.stopPropagation()"}})])}
@@ -290,6 +290,6 @@ with(this){return _c('h2',{attrs:{"id":"conclusion"}},[_v("Conclusion"),_c('a',{
 with(this){return _c('p',[_v("This concludes the tutorial for adding a new "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" to AddressBook.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Wed, 11 Oct 2023, 10:15:01 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Thu, 12 Oct 2023, 10:23:36 GMT+8]")])])])}
 }];
   
