@@ -105,7 +105,6 @@
     },
     {
       "src": "UserGuide.md",
-      "title": "User Guide",
       "headings": {
         "user-guide": "User Guide",
         "quick-start": "Quick start",
@@ -116,6 +115,7 @@
         "viewing-a-specific-internship-view": "Viewing a specific internship : view",
         "locating-an-internship-by-company-find": "Locating an internship by company: find",
         "updating-an-internship-status-tag": "Updating an internship status : tag",
+        "adding-a-note-to-a-specific-internship-note": "Adding a note to a specific internship : note",
         "deleting-an-internship-application-entry-delete": "Deleting an internship application entry : delete",
         "saving-the-data": "Saving the data",
         "editing-the-data-file": "Editing the data file",
