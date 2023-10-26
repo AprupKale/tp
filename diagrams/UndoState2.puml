@@ -1,0 +1,21 @@
+@startuml
+!include style.puml
+skinparam ClassFontColor #000000
+skinparam ClassBorderColor #000000
+skinparam ClassBackgroundColor #FFFFAA
+skinparam Padding 10
+
+title After command "add n/Google"
+
+package savedStates <<rectangle>> {
+    class State2 as "<u>ic1:InternApplications</u>"
+    class State3 as "<u>ic0:InternApplications</u>"
+}
+
+class State1 as "<u>ic2:InternApplications</u>"
+class Pointer as "<u>:InternTracker</u>" #FFFFFF
+
+Pointer -right-> State1
+State2 -[hidden]-> State3
+@end
+

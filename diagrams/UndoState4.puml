@@ -1,0 +1,20 @@
+@startuml
+!include style.puml
+skinparam ClassFontColor #000000
+skinparam ClassBorderColor #000000
+skinparam ClassBackgroundColor #FFFFAA
+skinparam Padding 10
+
+title After command "list"
+
+package savedStates <<rectangle>> {
+    class State3 as "<u>ic0:InternApplications</u>"
+}
+
+class State2 as "<u>ic1:InternApplications</u>"
+
+class Pointer as "<u>:InternTracker</u>" #FFFFFF
+
+Pointer -right-> State2
+@end
+
