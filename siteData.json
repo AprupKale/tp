@@ -51,6 +51,7 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
+        "add-command": "Add command",
         "note-command": "Note command",
         "find-command": "Find command",
         "sort-feature": "Sort feature",
