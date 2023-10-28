@@ -1,0 +1,76 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":InternTrackerParser" as InternTrackerParser LOGIC_COLOR
+participant ":NoteCommandParser" as NoteCommandParser LOGIC_COLOR
+participant ":NoteCommand" as NoteCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("note 1 i/Need to revise Rust")
+activate LogicManager
+
+LogicManager -> InternTrackerParser : parseCommand("note 1 i/Need to revise Rust")
+activate InternTrackerParser
+
+create NoteCommandParser
+InternTrackerParser -> NoteCommandParser : new NoteCommandParser()
+activate NoteCommandParser
+
+NoteCommandParser --> InternTrackerParser
+deactivate NoteCommandParser
+
+InternTrackerParser -> NoteCommandParser : parse("1 i/Need to revise Rust")
+activate NoteCommandParser
+
+create NoteCommand
+NoteCommandParser -> NoteCommand
+activate NoteCommand
+
+NoteCommand --> NoteCommandParser :
+deactivate NoteCommand
+
+NoteCommandParser --> InternTrackerParser :
+deactivate NoteCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+NoteCommandParser -[hidden]-> InternTrackerParser
+destroy NoteCommandParser
+
+InternTrackerParser --> LogicManager : NoteCommand
+deactivate InternTrackerParser
+
+LogicManager -> NoteCommand : execute()
+activate NoteCommand
+
+NoteCommand -> Model : setInternApplication()
+activate Model
+
+Model --> NoteCommand
+deactivate Model
+
+NoteCommand -> Model : updateFilteredInternApplicationList()
+activate Model
+
+Model --> NoteCommand
+deactivate Model
+
+create CommandResult
+NoteCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> NoteCommand
+deactivate CommandResult
+
+NoteCommand --> LogicManager : CommandResult
+deactivate NoteCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml

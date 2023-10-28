@@ -1,0 +1,84 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":InternTrackerParser" as InternTrackerParser LOGIC_COLOR
+participant ":FindCommandParser" as FindCommandParser LOGIC_COLOR
+participant ":FindCommand" as FindCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+participant ":CompanyContainsFieldKeywordsPredicate" as CompanyContainsFieldKeywordsPredicate MODEL_COLOR
+end box
+
+[-> LogicManager : execute("find n/Jane c/Summer")
+activate LogicManager
+
+LogicManager -> InternTrackerParser : parseCommand("find n/Jane c/Summer")
+activate InternTrackerParser
+
+create FindCommandParser
+InternTrackerParser -> FindCommandParser : new FindCommandParser()
+activate FindCommandParser
+
+FindCommandParser --> InternTrackerParser
+deactivate FindCommandParser
+
+InternTrackerParser -> FindCommandParser : parse("n/Jane c/Summer")
+activate FindCommandParser
+
+create CompanyContainsFieldKeywordsPredicate
+FindCommandParser -> CompanyContainsFieldKeywordsPredicate : new CompanyContainsFieldKeywordsPredicate()
+activate CompanyContainsFieldKeywordsPredicate
+
+CompanyContainsFieldKeywordsPredicate --> FindCommandParser : Predicate<InternApplication>
+deactivate CompanyContainsFieldKeywordsPredicate
+
+create FindCommand
+FindCommandParser -> FindCommand
+activate FindCommand
+
+FindCommand --> FindCommandParser :
+deactivate FindCommand
+
+FindCommandParser --> InternTrackerParser :
+deactivate FindCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+FindCommandParser -[hidden]-> InternTrackerParser
+destroy FindCommandParser
+
+InternTrackerParser --> LogicManager : FindCommand
+deactivate InternTrackerParser
+
+LogicManager -> FindCommand : execute()
+activate FindCommand
+
+FindCommand -> Model : updateFilteredInternApplicationList()
+activate Model
+
+Model --> FindCommand
+deactivate Model
+
+FindCommand -> Model : getFilteredInternApplicationList()
+activate Model
+
+Model --> FindCommand
+deactivate Model
+
+create CommandResult
+FindCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> FindCommand
+deactivate CommandResult
+
+FindCommand --> LogicManager : CommandResult
+deactivate FindCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+Actor User as user USER_COLOR
+Participant ":UI" as ui UI_COLOR
+Participant ":Logic" as logic LOGIC_COLOR
+
+user -[USER_COLOR]> ui : "click on housekeep button"
+activate ui UI_COLOR
+
+loop entire list
+    opt application deadline is more than 1 year ago
+        ui -[UI_COLOR]> logic : execute("delete n")
+        activate logic LOGIC_COLOR
+        logic -[UI_COLOR]> ui :
+        deactivate logic LOGIC_COLOR
+    end
+end
+
+ui--[UI_COLOR]> user : update list display
+deactivate ui
+@enduml
