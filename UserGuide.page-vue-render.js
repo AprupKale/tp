@@ -293,6 +293,6 @@ with(this){return _c('h2',{attrs:{"id":"glossary"}},[_c('strong',[_v("Glossary")
 with(this){return _c('ul',[_c('li',[_c('strong',[_v("Mainstream OS")]),_v(": Windows, Linux, Unix, OS-X")]),_v(" "),_c('li',[_c('strong',[_v("Internship Entry:")]),_v(" A record or entry in the system that represents information about an internship opportunity. It includes details such as company name, application status, deadlines, and notes.")]),_v(" "),_c('li',[_c('strong',[_v("Application Status:")]),_v(" The current stage or status of an internship application.")]),_v(" "),_c('li',[_c('strong',[_v("Sample Data:")]),_v(" Pre-populated data used for demonstration purposes, enabling new users to see how the application functions with realistic examples.")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Thu, 2 Nov 2023, 0:11:21 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Fri, 3 Nov 2023, 0:59:23 GMT+8]")])])])}
 }];
   
