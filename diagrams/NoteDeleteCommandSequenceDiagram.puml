@@ -14,10 +14,10 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("note 1 i/Need to revise Rust")
+[-> LogicManager : execute("note 1 o/2")
 activate LogicManager
 
-LogicManager -> InternTrackerParser : parseCommand("note 1 i/Need to revise Rust")
+LogicManager -> InternTrackerParser : parseCommand("note 1 o/2")
 activate InternTrackerParser
 
 create NoteCommandParser
@@ -27,7 +27,7 @@ activate NoteCommandParser
 NoteCommandParser --> InternTrackerParser
 deactivate NoteCommandParser
 
-InternTrackerParser -> NoteCommandParser : parse("1 i/Need to revise Rust")
+InternTrackerParser -> NoteCommandParser : parse("1 o/2")
 activate NoteCommandParser
 
 create NoteCommand
@@ -43,7 +43,7 @@ deactivate NoteCommandParser
 NoteCommandParser -[hidden]-> InternTrackerParser
 destroy NoteCommandParser
 
-InternTrackerParser --> LogicManager : NoteCommand
+InternTrackerParser --> LogicManager : NoteDeleteCommand
 deactivate InternTrackerParser
 
 LogicManager -> NoteCommand : execute()

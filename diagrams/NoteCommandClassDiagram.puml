@@ -1,0 +1,35 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor LOGIC_COLOR
+skinparam classBackgroundColor LOGIC_COLOR
+
+package Logic as LogicPackage {
+
+package "Parser Logic" #F4F6F6{
+Class "<<interface>>\nParser" as Logic
+Class NoteCommandParser
+}
+
+package "Command Logic" #F4F6F6{
+Class "{abstract}\nCommand" as Command
+Class "{abstract}\nNoteCommand" as NoteCommand
+Class NoteInsertCommand
+Class NoteDeleteCommand
+}
+
+}
+
+Class HiddenOutside #FFFFFF
+HiddenOutside ..> Logic
+
+NoteCommandParser .up.|> Logic
+NoteCommandParser ..> "1" Command
+
+NoteCommand -up-|> Command
+NoteDeleteCommand -up-|> NoteCommand
+NoteInsertCommand -up-|> NoteCommand
+
+
+
+@enduml
