@@ -17,17 +17,17 @@
     },
     {
       "src": "Configuration.md",
-      "title": "Configuration guide",
+      "title": "Configuration Guide",
       "headings": {
-        "configuration-guide": "Configuration guide"
+        "configuration-guide": "Configuration Guide"
       },
       "headingKeywords": {}
     },
     {
       "src": "DevOps.md",
-      "title": "DevOps guide",
+      "title": "DevOps Guide",
       "headings": {
-        "devops-guide": "DevOps guide",
+        "devops-guide": "DevOps Guide",
         "build-automation": "Build automation",
         "continuous-integration-ci": "Continuous integration (CI)",
         "code-coverage": "Code coverage",
@@ -42,39 +42,47 @@
       "headings": {
         "developer-guide": "Developer Guide",
         "acknowledgements": "Acknowledgements",
-        "setting-up-getting-started": "Setting up, getting started",
+        "setting-up-and-getting-started": "Setting Up and Getting Started",
         "design": "Design",
         "architecture": "Architecture",
-        "ui-component": "UI component",
-        "logic-component": "Logic component",
-        "model-component": "Model component",
-        "storage-component": "Storage component",
-        "common-classes": "Common classes",
-        "implementation": "Implementation",
-        "add-command": "Add command",
-        "note-command": "Note command",
-        "find-command": "Find command",
-        "sort-feature": "Sort feature",
+        "ui-component": "UI Component",
+        "logic-component": "Logic Component",
+        "model-component": "Model Component",
+        "storage-component": "Storage Component",
+        "common-classes": "Common Classes",
+        "noteworthy-feature-implementations": "Noteworthy Feature Implementations",
+        "add-command": "Add Command",
+        "find-command": "Find Command",
+        "note-command": "Note Command",
+        "sort-command": "Sort Command",
+        "undo-command": "Undo Command",
         "click-internapplication-card": "Click InternApplication Card",
-        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
-        "proposed-data-archiving": "[Proposed] Data archiving",
-        "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
+        "documentation-testing-logging-configuration-dev-ops": "Documentation, Testing, Logging, Configuration, Dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
         "user-stories": "User stories",
         "use-cases": "Use cases",
         "non-functional-requirements": "Non-Functional Requirements",
         "glossary": "Glossary",
-        "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
+        "appendix-instructions-for-manual-testing": "Appendix: Instructions for Manual Testing",
         "launch-and-shutdown": "Launch and shutdown",
-        "deleting-a-internapplication": "Deleting a internApplication",
-        "saving-data": "Saving data"
+        "deleting-an-internapplication": "Deleting an internApplication",
+        "saving-data": "Saving data",
+        "appendix-effort": "Appendix: Effort",
+        "designing-organisation-features": "Designing Organisation Features",
+        "developing-a-better-user-interface": "Developing a Better User Interface",
+        "designing-notes-functionality": "Designing Notes Functionality",
+        "appendix-planned-enhancements": "Appendix: Planned Enhancements",
+        "improved-command-error-feedback": "Improved Command Error Feedback",
+        "improved-unknown-command-error-feedback": "Improved Unknown Command Error Feedback",
+        "improved-visibility-of-newly-added-internship-applications": "Improved Visibility of Newly Added Internship Applications",
+        "enhanced-version-control-redo": "Enhanced Version Control : Redo"
       },
       "headingKeywords": {}
     },
     {
       "src": "Documentation.md",
-      "title": "Documentation guide",
+      "title": "Documentation Guide",
       "headings": {
         "documentation-guide": "Documentation Guide"
       },
@@ -82,27 +90,27 @@
     },
     {
       "src": "Logging.md",
-      "title": "Logging guide",
+      "title": "Logging Guide",
       "headings": {
-        "logging-guide": "Logging guide"
+        "logging-guide": "Logging Guide"
       },
       "headingKeywords": {}
     },
     {
       "src": "SettingUp.md",
-      "title": "Setting up and getting started",
+      "title": "Setting Up and Getting Started",
       "headings": {
-        "setting-up-and-getting-started": "Setting up and getting started",
-        "setting-up-the-project-in-your-computer": "Setting up the project in your computer",
+        "setting-up-and-getting-started": "Setting Up and Getting started",
+        "setting-up-the-project-in-your-computer": "Setting Up the Project in your Computer",
         "before-writing-code": "Before writing code"
       },
       "headingKeywords": {}
     },
     {
       "src": "Testing.md",
-      "title": "Testing guide",
+      "title": "Testing Guide",
       "headings": {
-        "testing-guide": "Testing guide",
+        "testing-guide": "Testing Guide",
         "running-tests": "Running tests",
         "types-of-tests": "Types of tests"
       },
@@ -161,6 +169,7 @@
       "src": "team/tim-pipi.md",
       "title": "Timothy Putra Prasetio's Project Portfolio Page",
       "headings": {
+        "timothy-putra-prasetio-s-project-portfolio-page": "Timothy Putra Prasetio's Project Portfolio Page",
         "project-letsgethired": "Project: LetsGetHired"
       },
       "headingKeywords": {}

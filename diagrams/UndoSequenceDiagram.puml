@@ -12,10 +12,10 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 participant ":VersionedInternTracker" as VersionedInternTracker MODEL_COLOR
 end box
-[-> LogicManager : execute(undo)
+[-> LogicManager : execute("undo")
 activate LogicManager
 
-LogicManager -> InternTrackerParser : parseCommand(undo)
+LogicManager -> InternTrackerParser : parseCommand("undo")
 activate InternTrackerParser
 
 create UndoCommand

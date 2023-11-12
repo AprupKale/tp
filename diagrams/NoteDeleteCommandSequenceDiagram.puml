@@ -6,7 +6,7 @@ box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":InternTrackerParser" as InternTrackerParser LOGIC_COLOR
 participant ":NoteCommandParser" as NoteCommandParser LOGIC_COLOR
-participant ":NoteCommand" as NoteCommand LOGIC_COLOR
+participant ":NoteDeleteCommand" as NoteDeleteCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
@@ -30,12 +30,12 @@ deactivate NoteCommandParser
 InternTrackerParser -> NoteCommandParser : parse("1 o/2")
 activate NoteCommandParser
 
-create NoteCommand
-NoteCommandParser -> NoteCommand
-activate NoteCommand
+create NoteDeleteCommand
+NoteCommandParser -> NoteDeleteCommand
+activate NoteDeleteCommand
 
-NoteCommand --> NoteCommandParser :
-deactivate NoteCommand
+NoteDeleteCommand --> NoteCommandParser :
+deactivate NoteDeleteCommand
 
 NoteCommandParser --> InternTrackerParser :
 deactivate NoteCommandParser
@@ -46,30 +46,26 @@ destroy NoteCommandParser
 InternTrackerParser --> LogicManager : NoteDeleteCommand
 deactivate InternTrackerParser
 
-LogicManager -> NoteCommand : execute()
-activate NoteCommand
+LogicManager -> NoteDeleteCommand : execute()
+activate NoteDeleteCommand
 
-NoteCommand -> Model : setInternApplication()
+NoteDeleteCommand -> Model : setInternApplication()
 activate Model
 
-Model --> NoteCommand
-deactivate Model
-
-NoteCommand -> Model : updateFilteredInternApplicationList()
-activate Model
-
-Model --> NoteCommand
+Model --> NoteDeleteCommand
 deactivate Model
 
 create CommandResult
-NoteCommand -> CommandResult
+NoteDeleteCommand -> CommandResult
 activate CommandResult
 
-CommandResult --> NoteCommand
+CommandResult --> NoteDeleteCommand
 deactivate CommandResult
 
-NoteCommand --> LogicManager : CommandResult
-deactivate NoteCommand
+NoteDeleteCommand --> LogicManager : CommandResult
+deactivate NoteDeleteCommand
+NoteDeleteCommand -[hidden]-> LogicManager
+destroy NoteDeleteCommand
 
 [<--LogicManager
 deactivate LogicManager

@@ -6,7 +6,7 @@ box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":InternTrackerParser" as InternTrackerParser LOGIC_COLOR
 participant ":NoteCommandParser" as NoteCommandParser LOGIC_COLOR
-participant ":NoteCommand" as NoteCommand LOGIC_COLOR
+participant ":NoteInsertCommand" as NoteInsertCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
@@ -14,10 +14,10 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("note 1 i/Need to revise Rust")
+[-> LogicManager : execute("note 1 i/...")
 activate LogicManager
 
-LogicManager -> InternTrackerParser : parseCommand("note 1 i/Need to revise Rust")
+LogicManager -> InternTrackerParser : parseCommand("note 1 i/...")
 activate InternTrackerParser
 
 create NoteCommandParser
@@ -27,15 +27,15 @@ activate NoteCommandParser
 NoteCommandParser --> InternTrackerParser
 deactivate NoteCommandParser
 
-InternTrackerParser -> NoteCommandParser : parse("1 i/Need to revise Rust")
+InternTrackerParser -> NoteCommandParser : parse("1 i/...")
 activate NoteCommandParser
 
-create NoteCommand
-NoteCommandParser -> NoteCommand
-activate NoteCommand
+create NoteInsertCommand
+NoteCommandParser -> NoteInsertCommand
+activate NoteInsertCommand
 
-NoteCommand --> NoteCommandParser :
-deactivate NoteCommand
+NoteInsertCommand --> NoteCommandParser :
+deactivate NoteInsertCommand
 
 NoteCommandParser --> InternTrackerParser :
 deactivate NoteCommandParser
@@ -46,30 +46,28 @@ destroy NoteCommandParser
 InternTrackerParser --> LogicManager : NoteInsertCommand
 deactivate InternTrackerParser
 
-LogicManager -> NoteCommand : execute()
-activate NoteCommand
+LogicManager -> NoteInsertCommand : execute()
+activate NoteInsertCommand
 
-NoteCommand -> Model : setInternApplication()
+NoteInsertCommand -> Model : setInternApplication()
 activate Model
 
-Model --> NoteCommand
-deactivate Model
 
-NoteCommand -> Model : updateFilteredInternApplicationList()
-activate Model
 
-Model --> NoteCommand
+Model --> NoteInsertCommand
 deactivate Model
 
 create CommandResult
-NoteCommand -> CommandResult
+NoteInsertCommand -> CommandResult
 activate CommandResult
 
-CommandResult --> NoteCommand
+CommandResult --> NoteInsertCommand
 deactivate CommandResult
 
-NoteCommand --> LogicManager : CommandResult
-deactivate NoteCommand
+NoteInsertCommand --> LogicManager : result
+deactivate NoteInsertCommand
+NoteInsertCommand -[hidden]-> LogicManager
+destroy NoteInsertCommand
 
 [<--LogicManager
 deactivate LogicManager

@@ -15,10 +15,10 @@ participant ":Model" as Model MODEL_COLOR
 participant ":CompanyContainsFieldKeywordsPredicate" as CompanyContainsFieldKeywordsPredicate MODEL_COLOR
 end box
 
-[-> LogicManager : execute("find n/Jane c/Summer")
+[-> LogicManager : execute("find n/...")
 activate LogicManager
 
-LogicManager -> InternTrackerParser : parseCommand("find n/Jane c/Summer")
+LogicManager -> InternTrackerParser : parseCommand("find n/...")
 activate InternTrackerParser
 
 create FindCommandParser
@@ -76,8 +76,10 @@ activate CommandResult
 CommandResult --> FindCommand
 deactivate CommandResult
 
-FindCommand --> LogicManager : CommandResult
+FindCommand --> LogicManager : result
 deactivate FindCommand
+FindCommand -[hidden]-> LogicManager
+destroy FindCommand
 
 [<--LogicManager
 deactivate LogicManager

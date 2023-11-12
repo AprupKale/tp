@@ -14,10 +14,10 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("add n/Jane Street r/Full Stack Developer c/Summer 2024")
+[-> LogicManager : execute("add n/Jane...")
 activate LogicManager
 
-LogicManager -> InternTrackerParser : parseCommand("add n/Jane Street r/Full Stack Developer c/Summer 2024")
+LogicManager -> InternTrackerParser : parseCommand("add n/Jane...")
 activate InternTrackerParser
 
 create AddCommandParser
@@ -27,7 +27,7 @@ activate AddCommandParser
 AddCommandParser --> InternTrackerParser
 deactivate AddCommandParser
 
-InternTrackerParser -> AddCommandParser : parse("n/Jane Street r/Full Stack Developer c/Summer 2024")
+InternTrackerParser -> AddCommandParser : parse("n/Jane...")
 activate AddCommandParser
 
 create AddCommand
@@ -62,8 +62,10 @@ activate CommandResult
 CommandResult --> AddCommand
 deactivate CommandResult
 
-AddCommand --> LogicManager : CommandResult
+AddCommand --> LogicManager : result
 deactivate AddCommand
+AddCommand -[hidden]-> LogicManager
+destroy AddCommand
 
 [<--LogicManager
 deactivate LogicManager

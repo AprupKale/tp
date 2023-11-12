@@ -47,6 +47,9 @@ deactivate SortCommand
 
 SortCommandParser --> InternTrackerParser
 deactivate SortCommandParser
+'Hidden arrow to position below activation bar
+SortCommandParser -[hidden]-> InternTrackerParser
+destroy SortCommandParser
 
 InternTrackerParser --> LogicManager : s
 deactivate InternTrackerParser
@@ -69,7 +72,7 @@ deactivate CommandResult
 
 SortCommand --> LogicManager : result
 deactivate SortCommand
-SortCommand -[hidden]-> LogicManager : result
+SortCommand -[hidden]-> LogicManager
 destroy SortCommand
 
 [<--LogicManager
